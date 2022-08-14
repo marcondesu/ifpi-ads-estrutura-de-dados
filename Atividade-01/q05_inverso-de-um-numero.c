@@ -6,19 +6,17 @@ Proposta:
 */
 
 int main() {
-    int number, number_invertido, centena, dezena;
+    int number, number_invertido, centena, dezena, unidade;
 
     printf("Numero de 3 digitos: ");
     scanf("%d", &number);
 
     centena = number / 100;
-    dezena = number - centena * 100;
+    dezena = (number - centena * 100) / 10;
+    unidade = number - ((centena * 100) + (dezena * 10));
+    number_invertido = (unidade * 100) + (dezena * 10) + centena;
 
-    printf("%d - %d", centena, dezena);
-
-    // number_invertido = centena * 100 + dezena * 10;
-
-    // printf("\nInvertendo %d temos %d", number, number_invertido);
+    printf("\nInvertendo %d temos %d", number, number_invertido);
     
     return 0;
 }
