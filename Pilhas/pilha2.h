@@ -1,45 +1,24 @@
+#ifndef PILHA3_H
+#define PILHA3_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct pilha{
 	char item;
 	struct pilha *prox;	
-}Pilha;
+} Pilha;
 
 Pilha *topo = NULL;
 
-Pilha* No(char valor){
-	Pilha *n = (Pilha*)malloc(sizeof(Pilha));
-	n->item = valor;
-	n->prox = NULL;
+Pilha* No(char valor);
 
-	return n;	
-}
-
-void push(char n){
-			Pilha *novo = No(n);
-			if(topo == NULL){
-				topo = novo;
-			}else{
-				novo->prox = topo;
-				topo = novo;
-			}
-		}
+void push(char n);
 		
-char pop(){
-	
-}
+char pop();
 
-int pilhaVazia(){
+char getTopo();
+
+bool pilhaVazia();
 		
-		}
-		
-char getTopo(){
-	return topo->item;
-}
-		
-
-		
-
-
-
+#endif
