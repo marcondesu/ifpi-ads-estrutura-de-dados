@@ -1,19 +1,8 @@
 #include "pilha3.c"
 
 int main() {
-	push('a');
-	push('b');
-	push('c');
-
-	printf("Pilha: %s\n\n", vetor);
-
-	printf("- Desempilhado: %c\n", pop());
-
-	printf("\nTamanho da pilha: %d\n", tamanho);
-	printf("Indice do topo: %d\n", topo);
-	printf("\nPilha: %s\n", vetor);
-
-	/* Pilha *pilha_1 = criar_pilha(5);
+	/* TESTES EM pilha1.c
+	Pilha *pilha_1 = criar_pilha(5);
 
 	push(pilha_1, 'a');
 	push(pilha_1, 'b');
@@ -30,4 +19,18 @@ int main() {
 
 	destruir(pilha_1);
 	printf("Pilha apos destruicao: %s\n", pilha_1->vetor); */
+	
+	/* TESTES EM pilha3.c
+	push('a');
+	push('b');
+	push('c');
+
+	printf("Pilha: %s\n\n", vetor);
+
+	printf("- Desempilhado: %c\n", pop());
+
+	printf("\nTamanho da pilha: %d\n", tamanho);
+	printf("Indice do topo: %d\n", topo);
+	printf("\nPilha: %s\n", vetor);
+	*/
 }
