@@ -1,6 +1,5 @@
 #ifndef PILHA1_H
 #define PILHA1_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
