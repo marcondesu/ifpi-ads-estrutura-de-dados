@@ -1,25 +1,6 @@
 #include "pilha1.c"
 
 int main() {
-	Pilha *p1 = criar_pilha(2);
-
-	printf("Pilha: %s\n", p1->vetor);
-	// printf("\nEmpilhando 'b' e 'c'...\n\n");
-	push(p1, 'a');
-	push(p1, 'b');
-	// push(p1, 'c');
-	printf("Pilha: %s\n", p1->vetor);
-
-	/* destruir(p1);
-
-	printf("Endereco: %p\n", p1);
-
-	if (pilhaVazia(p1)) {
-		printf("Pilha vazia\n");
-	} else {
-		printf("Pilha nao vazia\n");
-	} */
-
 	/* TESTES EM pilha1.c 
 	Pilha *pilha_1 = criar_pilha(5);
 
@@ -37,7 +18,18 @@ int main() {
 	printf("\nPilha antes da destruicao: %s\n", pilha_1->vetor);
 
 	destruir(pilha_1);
-	printf("Pilha apos destruicao: %s\n", pilha_1->vetor); */
+	printf("Pilha apos destruicao: %s\n", pilha_1->vetor);
+	
+	TESTE DA FUNÇÃO destruir()
+	destruir(p1);
+
+	printf("Endereco: %p\n", p1);
+
+	if (pilhaVazia(p1)) {
+		printf("Pilha vazia\n");
+	} else {
+		printf("Pilha nao vazia\n");
+	} */
 	
 	/* TESTES EM pilha3.c
 	push('a');
