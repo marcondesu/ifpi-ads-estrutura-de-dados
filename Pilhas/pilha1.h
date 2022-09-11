@@ -23,6 +23,8 @@ void push(Pilha *p, char valor);
 
 char pop(Pilha *p);
 
+void limpar_pilha(Pilha *p);
+
 void destruir(Pilha *p);
 
 #endif
