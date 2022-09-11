@@ -46,6 +46,15 @@ char pop(Pilha *p) {
     return valor_topo;
 }
 
+void limpar_pilha(Pilha *p) {
+	push(p, '#');
+	push(p, '#');
+	push(p, '#');
+	pop(p);
+	pop(p);
+	pop(p);
+}
+
 void destruir(Pilha *p) {
 	free((p)->vetor);
 	free(p);
