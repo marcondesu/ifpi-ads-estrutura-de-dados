@@ -1,4 +1,4 @@
-#include "pilha1.c"
+#include "pilha2.c"
 
 int main() {
 	/* TESTES EM pilha1.c 
@@ -30,6 +30,14 @@ int main() {
 	} else {
 		printf("Pilha nao vazia\n");
 	} */
+	
+	/* TESTES EM pilha2.c
+	Pilha *pilha_2 = No('a');
+
+	push(pilha_2, 'b');
+
+	printf("%c", pilha_2->item);
+	printf("%c", pilha_2->prox); */
 	
 	/* TESTES EM pilha3.c
 	push('a');
