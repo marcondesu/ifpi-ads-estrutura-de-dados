@@ -13,7 +13,7 @@ Pilha *topo = NULL;
 
 Pilha* No(char valor);
 
-void push(char n);
+void push(Pilha *p, char n);
 		
 char pop();
 

@@ -5,20 +5,20 @@ char getTopo() {
 }
 
 Pilha* No(char valor) {
-    Pilha *n = (Pilha*)malloc(sizeof(Pilha));
-	n->item = valor;
-	n->prox = NULL;
+    Pilha *pilha_2 = (Pilha*)malloc(sizeof(Pilha));
+	pilha_2->item = valor;
+	pilha_2->prox = NULL;
 
-	return n;
+	return pilha_2;
 }
 
-void push(char n) {
+void push(Pilha *p, char n) {
     Pilha *novo = No(n);
 
-	if(topo == NULL){
-		topo = novo;
-	} else {
-		novo->prox = topo;
+	if (p->prox == NULL){
+		p->prox = novo;
+	}
+	else {
 		topo = novo;
 	}
 }
