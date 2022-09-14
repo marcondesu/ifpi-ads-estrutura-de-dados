@@ -17,7 +17,7 @@ Pilha* criar_pilha(int tamanho_da_pilha) {
 	
 	p->tamanho = tamanho_da_pilha;
 	p->topo = -1;
-	p->vetor = (char*)malloc(tamanho_da_pilha * sizeof(char));
+	p->vetor = (char*)malloc(tamanho_da_pilha * sizeof(int));
 
     return p;
 }
@@ -35,7 +35,7 @@ int pop(Pilha *p) {
 	if (pilhaVazia(p)) {
 	    printf("Erro! A pilha esta vazia\n");
 	} else {
-		char valor_topo = p->vetor[getTopo(p)];
+		int valor_topo = p->vetor[getTopo(p)];
 
 		p->vetor[getTopo(p)] = 0;
 		p->topo--;
@@ -45,14 +45,23 @@ int pop(Pilha *p) {
 }
 
 void preencher_pilha(Pilha *p) {
-	int valor;
+	float valor;
 
-	for (int i = 0; i < p->tamanho; i++) {
+	for (float i = 0; i < p->tamanho; i++) {
 		printf("> ");
-		scanf("%d", &valor);
+		scanf("%f", &valor);
 
 		push(p, valor);
 	}
+}
+
+void limpar_pilha(Pilha *p) {
+	push(p, '#');
+	push(p, '#');
+	push(p, '#');
+	pop(p);
+	pop(p);
+	pop(p);
 }
 
 void destruir(Pilha *p) {
