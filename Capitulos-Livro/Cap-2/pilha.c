@@ -64,6 +64,12 @@ void limpar_pilha(Pilha *p) {
 	pop(p);
 }
 
+void mostrar_valores(Pilha *p) {
+	for (int i = 0; i < p->tamanho; i++) {
+		printf("%d\n", p->vetor[i]);
+	}
+}
+
 void destruir(Pilha *p) {
 	free((p)->vetor);
 	free(p);

@@ -26,6 +26,8 @@ void preencher_pilha(Pilha *p);
 
 void limpar_pilha(Pilha *p);
 
+void mostrar_valores(Pilha *p);
+
 void destruir(Pilha *p);
 
 #endif
