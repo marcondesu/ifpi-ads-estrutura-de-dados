@@ -22,6 +22,8 @@ void push(Pilha *p, int valor);
 
 int pop(Pilha *p);
 
+Pilha* pop_em_valor(Pilha *p, int menor);
+
 void preencher_pilha(Pilha *p);
 
 void limpar_pilha(Pilha *p);

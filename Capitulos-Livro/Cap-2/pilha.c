@@ -44,6 +44,18 @@ int pop(Pilha *p) {
 	}
 }
 
+Pilha* pop_em_valor(Pilha *p, int menor) {
+	Pilha *p1 = criar_pilha(p->tamanho - 1);
+
+	for (int i = 0; i < p->tamanho; i++) {
+		if (p->vetor[i] != menor) {
+			push(p1, p->vetor[i]);
+		}
+	}
+
+	return p1;
+}
+
 void preencher_pilha(Pilha *p) {
 	float valor;
 
