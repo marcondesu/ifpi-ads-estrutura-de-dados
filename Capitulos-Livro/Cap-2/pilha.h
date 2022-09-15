@@ -28,6 +28,8 @@ void limpar_pilha(Pilha *p);
 
 void mostrar_valores(Pilha *p);
 
+int menor_valor(Pilha *p);
+
 void destruir(Pilha *p);
 
 #endif

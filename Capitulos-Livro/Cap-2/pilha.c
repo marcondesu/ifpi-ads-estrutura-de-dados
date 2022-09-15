@@ -70,6 +70,19 @@ void mostrar_valores(Pilha *p) {
 	}
 }
 
+int menor_valor(Pilha *p) {
+	int menor;
+	menor = p->vetor[0];
+
+	for (int i = 0; i < p->tamanho; i++) {
+		if (menor > p->vetor[i]) {
+			menor = p->vetor[i];
+		}
+	}
+
+	return menor;
+}
+
 void destruir(Pilha *p) {
 	free((p)->vetor);
 	free(p);
