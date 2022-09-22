@@ -31,6 +31,15 @@ void push(Pilha *p, int valor) {
 	}
 }
 
+void push_char(Pilha *p, char valor) {
+	if (pilhaCheia(p)) {
+		printf("Erro! A pilha esta cheia\n");
+	} else {
+		p->vetor[getTopo(p) + 1] = valor;
+		p->topo++;
+	}
+}
+
 int pop(Pilha *p) {
 	if (pilhaVazia(p)) {
 	    printf("Erro! A pilha esta vazia\n");

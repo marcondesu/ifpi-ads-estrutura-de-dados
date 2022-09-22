@@ -4,9 +4,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef struct pilha {
-	int tamanho;	// tamanho da pilha
-	int topo;		// index do elemento mais acima na pilha
+typedef struct pilha
+{
+	int tamanho; // tamanho da pilha
+	int topo;	 // index do elemento mais acima na pilha
 	char *vetor;
 } Pilha;
 
@@ -16,13 +17,17 @@ bool pilhaCheia(Pilha *p);
 
 bool pilhaVazia(Pilha *p);
 
-Pilha* criar_pilha(int tamanho_da_pilha);
+Pilha *criar_pilha(int tamanho_da_pilha);
 
 void push(Pilha *p, int valor);
 
+void push_char(Pilha *p, char valor);
+
 int pop(Pilha *p);
 
-Pilha* pop_em_valor(Pilha *p, int menor);
+char pop_char(Pilha *p);
+
+Pilha *pop_em_valor(Pilha *p, int menor);
 
 void preencher_pilha(Pilha *p);
 
