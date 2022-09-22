@@ -8,7 +8,6 @@
 char *posfixa(Pilha *p) {
     // expressão posfixa vazia
     Pilha *posfixa = criar_pilha(13);
-    // static char s[256];
 
     // pilha de caracteres
     Pilha *P = criar_pilha(13);
@@ -19,7 +18,6 @@ char *posfixa(Pilha *p) {
     
     // ((9 - 1) / (1 + 3)) = 91-13+/
     // percorre a expressão infixa da esquerda para a direita ->
-    
     for (int i = 0; i <= 12; i++) {
         character = p->vetor[i];
 
