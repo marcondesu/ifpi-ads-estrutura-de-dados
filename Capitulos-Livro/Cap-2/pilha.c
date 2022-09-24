@@ -13,7 +13,7 @@ bool pilhaVazia(Pilha *p) {
 }
 
 Pilha* criar_pilha(int tamanho_da_pilha) {
-	Pilha *p = (Pilha*)malloc(sizeof(Pilha));
+	Pilha *p = malloc(sizeof(Pilha));
 	
 	p->tamanho = tamanho_da_pilha;
 	p->topo = -1;
