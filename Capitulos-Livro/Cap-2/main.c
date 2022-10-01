@@ -7,7 +7,7 @@ int main() {
 
     printf("%d\n", pilha_1->topo);
 
-    printf("%d\n", pop_em_valor(pilha_1, 7) );
+    printf("%d\n", pop_em_valor(pilha_1, 7));
 
     // mostrar_valores(pilha_1);
     // mostrar_valores(pilha_2);
