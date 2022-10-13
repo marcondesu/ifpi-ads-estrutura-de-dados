@@ -44,7 +44,13 @@ class Fila {
 			}
 		}
 
-		// char pop() {}
+		char pop() {
+			if (isEmpty()) {
+				printf("\nFila vazia!");
+			} else {
+				
+			}
+		}
 
 		bool isEmpty() {
 			return inicio == NULL;
@@ -58,15 +64,15 @@ class Fila {
 };
 
 int main() {
-	Fila fila;
+	Fila *fila = new Fila(5);
 
-	fila.append('a');
-	fila.append('b');
-	fila.append('c');
-	fila.append('d');
-	fila.append('e');
-	fila.append('f');
-	fila.append('g');
+	fila->append('a');
+	fila->append('b');
+	fila->append('c');
+	fila->append('d');
+	fila->append('e');
+	fila->append('f');
+	fila->append('g');
 
-	printf("%c", fila.inicio->prox->nome);
+	printf("%c", fila->inicio->nome);
 }
