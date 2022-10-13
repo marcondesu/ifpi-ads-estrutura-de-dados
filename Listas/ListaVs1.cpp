@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <string.h>
 #include <iostream>
 
 using namespace std;
-#define MAX 50
+#define MAX 50 // Tamanho máximo da lista
 
 typedef struct aluno {
 	int mat;
@@ -11,22 +10,23 @@ typedef struct aluno {
 } Aluno;
 
 Aluno lista[MAX];
-int qa; // índice do último elemento da lista
+int indice; // Índice do último elemento da lista
 
 void incluirDesordenado() {
-	int cont;
+	printf("----- Incluir desordenado -----\n");
+	int opcao;
 
 	do {
-		if (qa < MAX) {
+		if (indice < MAX) {
 			printf("\nMatricula: ");
-			scanf("%d", &lista[qa].mat);
+			scanf("%d", &lista[indice].mat);
 
 			printf("Nome: ");
-			cin>>lista[qa].nome;
+			cin>>lista[indice].nome;
 			// scanf("%s", lista[qa].nome);
 			fflush(stdin);
 
-			qa++;
+			indice++;
 
 			printf("- Aluno inserido.\n\n");
 		} else {
@@ -36,15 +36,15 @@ void incluirDesordenado() {
 		}
 
 		printf("Inserir outro? [1- Sim/2- Nao]\n> ");
-		scanf("%d", &cont);
+		scanf("%d", &opcao);
 
-	} while (cont == 1);
+	} while (opcao == 1);
 }
 
 // sizeof(Aluno) = 40
 // Retorna a posição do elemento procurado
 int procura(int mat) {
-	for (int i = 0; i < qa; i++) {
+	for (int i = 0; i < indice; i++) {
 		if (lista[i].mat == mat) {
 			return i;
 		}
@@ -55,13 +55,17 @@ int procura(int mat) {
 
 // Recebe a posição e imprime o elemento na tela
 void mostrar(int pos) {
+	printf("\n----- Mostrar(%d) -----\n", pos);
+
 	printf("Matricula: %d\n", lista[pos].mat);
 	// printf("Nome: %s", lista[pos].nome);
-	cout << lista[pos].nome;
+	cout << "Nome: " << lista[pos].nome << "\n";
 }
 
 // Procura o elemento e o mostra (se não for encontrado informa que ele não existe)
 void consultar(int mat) {
+	printf("\n---- Consultar(%d) ----", mat);
+
 	if (procura(mat) != -1) {
 		mostrar(procura(mat));
 	} else {
@@ -71,36 +75,36 @@ void consultar(int mat) {
 
 // Estratégia 1: colocar o último elemento da lista na posição do elemento removido
 void remover00(int pos) {
-	lista[pos] = lista[qa];
-	qa--;
+	printf("\n### Remover00(%d) ###\n", pos);
+	
+	lista[pos] = lista[indice];
+	indice--;
 }
 
 // Estratégia 2: mover todos os elementos que estão após o elemento que deve ser removido uma posição a frente.
 void remover01(int pos) {
 	Aluno aux;
 
-	for (int i = pos; i < qa; i++) {
+	for (int i = pos; i < indice; i++) {
 		aux = lista[i];
 		lista[i] = lista[i + 1];
 		lista[i + 1] = aux;
 	}
 
-	remover00(qa);
+	remover00(indice);
 }
 
 main() {
-	printf("----- Incluir desordenado -----\n");
 	incluirDesordenado();
 
-	printf("\n----- Mostrar(2) -----\n");
 	mostrar(2);
 
-	printf("\n\n---- Consultar(4) ----");
 	consultar(4);
+	consultar(3);
 
-	printf("\n### Remover00(1) ###\n");
 	remover00(1);
 
-	printf("\n----- Mostrar(0) -----\n");
 	mostrar(0);
+	mostrar(1);
+	mostrar(2);
 }
