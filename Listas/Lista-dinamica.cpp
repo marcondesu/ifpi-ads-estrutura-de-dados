@@ -80,37 +80,40 @@ class Lista {
 
 			while (atual != NULL) {
 				if (atual->mat == mat) {
+					// cout << "\n@@Nome: " << atual->nome << "\n@@Matricula: " << atual->mat;
 					return atual;
 				} else {
 					atual = atual->prox;
 				}
 			}
+
+			cout << "\nO elemento não está na lista";
 		}
 		
-		int remove(int mat) {
+		void remove(int mat) {
 			No *anterior, *atual;
 
 			anterior = NULL;
 			atual = inicio;
 
 			while (atual != NULL) {
-				if (busca(mat) == inicio) {
-					inicio = inicio->prox;
+				if (atual->mat == mat) {
+					if (atual == inicio) {
+						inicio = inicio->prox;
+						break;
 
-				} else if (busca(mat) == fim) {
-					fim = anterior;
-					fim->prox = NULL;
+					} else if (atual == fim) {
+						fim = anterior;
+						fim->prox = NULL;
+						break;
 
-				} else {
-					anterior->prox = atual->prox;
+					} else {
+						anterior->prox = atual->prox;
+						break;
+					}
 				}
 
-				if (anterior == NULL) {
-					anterior = inicio;
-				} else {
-					anterior = anterior->prox;
-				}
-
+				anterior = atual;
 				atual = atual->prox;
 			}
 		}
@@ -130,8 +133,19 @@ class Lista {
 			inicio = atual;
 		} */
 
-		// criar uma nova lista que seja o inverso da primeira
-		// void crialistainversa() {}
+		// Criar uma nova lista que seja o inverso da primeira
+		Lista *cria_lista_inversa() {
+			Lista *inversa;
+			No *atual = inicio;
+
+			while (atual != NULL) {
+				inversa->addToInicio(atual->mat, atual->nome);
+
+				atual = atual->prox;
+			}
+
+			return inversa;
+		}
 		
 		//inverter a propria lista
 		// void listainvertida() {}
@@ -143,10 +157,12 @@ main() {
    lista->addToFinal(1, "Joao");
    lista->addToFinal(2, "Gabriela");
    lista->addToFinal(3, "Fabiola");
-   lista->addToInicio(5, "Joana Oliveira");
-   lista->addToInicio(6, "Cristiano Oliveira");
+   lista->addToInicio(4, "Joana Oliveira");
+   lista->addToInicio(5, "Cristiano Oliveira");
 
    lista->mostra();
+
+   Lista *inversa = lista->cria_lista_inversa();
 
   // lista->listainvertida();
   // lista->mostra();
