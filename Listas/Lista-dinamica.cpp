@@ -80,7 +80,6 @@ class Lista {
 
 			while (atual != NULL) {
 				if (atual->mat == mat) {
-					// cout << "\n@@Nome: " << atual->nome << "\n@@Matricula: " << atual->mat;
 					return atual;
 				} else {
 					atual = atual->prox;
@@ -90,6 +89,7 @@ class Lista {
 			cout << "\nO elemento não está na lista";
 		}
 		
+		// Remove o nó com o atributo mat correspondente
 		void remove(int mat) {
 			No *anterior, *atual;
 
@@ -118,52 +118,70 @@ class Lista {
 			}
 		}
 
-		/* void removeTodos() {
+		// Remove todos os nós da lista
+		void removeTodos() {
 			No *atual = inicio;
 			No *proximo = NULL;
 
 			while (atual != NULL) {
 					proximo = atual->prox;
-					cout << "\n Apaga:" << atual->nome;
+					cout << "Apagando: " << atual->nome << endl;
 					
 					free(atual);
 					atual = proximo;						
 			}
 
 			inicio = atual;
-		} */
+		}
 
 		// Criar uma nova lista que seja o inverso da primeira
 		Lista *cria_lista_inversa() {
-			Lista *inversa;
+			Lista *inversa = new Lista();
 			No *atual = inicio;
 
 			while (atual != NULL) {
-				inversa->addToInicio(atual->mat, atual->nome);
+				inversa->addToInicio(atual->mat, (char*) atual->nome);
 
 				atual = atual->prox;
 			}
 
 			return inversa;
 		}
+
+		// Retorna o tamanho da lista
+		int tamanho() {
+			No *atual = inicio;
+			int tamanho = 0;
+
+			while (atual != NULL) {
+				tamanho++;
+
+				atual = atual->prox;
+			}
+
+			return tamanho;
+		}			
 		
-		//inverter a propria lista
-		// void listainvertida() {}
+		// Inverte a própria lista
+		Lista *listaInvertida() {
+			return cria_lista_inversa();
+		}
 };
 
 main() {
    Lista *lista = new Lista();
 
-   lista->addToFinal(1, "Joao");
-   lista->addToFinal(2, "Gabriela");
-   lista->addToFinal(3, "Fabiola");
-   lista->addToInicio(4, "Joana Oliveira");
-   lista->addToInicio(5, "Cristiano Oliveira");
+   lista->addToFinal(1, (char*) "Cibelle");
+   lista->addToFinal(2, (char*) "Marcos");
+   lista->addToFinal(3, (char*) "Sakura");
+   lista->addToFinal(4, (char*) "Positivo XC7660");
 
+   lista->remove(4);
    lista->mostra();
 
-   Lista *inversa = lista->cria_lista_inversa();
+   lista = lista->listaInvertida();
+  	lista->mostra();
 
-  // lista->listainvertida();
-  // lista->mostra();
+   lista->removeTodos();
+   lista->mostra();
 }
