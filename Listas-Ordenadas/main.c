@@ -1,9 +1,11 @@
-#include "../Listas-Encadeadas/lista_encadeada.c"
+#include "lista_ordenada.c"
 
-void inserir(Lista l, ItemType x) {
-    while((l != NULL) && (l->item < x)) {
-        l = criar_no(x, l);
-    }
-    
-    l = l->prox;
+void main() {
+    Lista lista = NULL;
+
+    inserir(1, &lista);
+    inserir(7, &lista);
+    inserir(2, &lista);
+
+    exibir(lista);
 }
