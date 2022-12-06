@@ -1,0 +1,39 @@
+Array
+    begin() -> retorna um iterator para o início do vetor
+    end() -> retorna um iterator para o final do vetor
+    [] -> acessa elemento
+    at -> acessa elemento
+    front -> acessa primeiro elemento
+    back -> acessa último elemento
+
+Vector - similar a um array, possui tamanho dinâmico
+    Front -> acessa primeiro elemento
+    Back -> acessa último elemento
+    begin(), back(), end()
+    push_back() -> adiciona elemento ao final do vetor
+    pop_back() -> destrói elemento ao final do vetor
+    Size() -> número de elementos do vetor
+    Insert -> insere um elemento em uma posição intermediária
+    [] -> operador de acesso randômico
+    at -> acessa elemento
+
+Iterator
+    Podem ser vistos como ponteiros para posições específicos
+    Aponta para um elemento dentro de um conjunto de elementos
+    Para vector, iterator é um ponteiro
+        O ponteiro aponta para os elementos no array
+        É possível interagir com os elementos usando os operadores ++ ou --
+
+Stack
+    push() -> inserir elemento no topo da pilha
+    pop() -> remover elemento do topo (não retorna)
+    top() -> obter elemento do topo
+    empty() -> verifica se a pilha está vazia
+    size() -> tamanho atual da pilha
+
+Queue
+    push() -> inserir elemento no final da fila
+    pop() -> remove o elemento da frente
+    front() -> retorna o elemento da frente sem removê-lo
+    empty() -> tamanho atual da fila
+    size() -> verifica se a fila está vazia
