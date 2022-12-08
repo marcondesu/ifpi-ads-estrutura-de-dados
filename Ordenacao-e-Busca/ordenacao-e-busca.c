@@ -40,9 +40,9 @@ void bubble_sort(int v[], int n) {
     }
 }
 
-void mostrar(float v[], int n) {
+void mostrar(int v[], int n) {
     for (int i = 0; i < n; i++) {
-        printf("%f\n", v[i]);
+        printf("%d\n", v[i]);
     }
 }
 
@@ -80,10 +80,10 @@ void insertion_sort(int v[], int n) {
     }
 }
 
-/* int main() {
+int main() {
     int vector[] = {46, 38, 50, 27, 19};
-    // bubble_sort(vector, 5);
-    selection_sort(vector, 5);
+    bubble_sort(vector, 5);
+    // selection_sort(vector, 5);
 
     mostrar(vector, 5);
-} */
+}
