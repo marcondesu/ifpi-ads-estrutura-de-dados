@@ -1,0 +1,9 @@
+Um método de busca deve informar se x é um dos n itens de v
+
+Busca linear
+- examina cada item de v, verificando um por um do primeiro ao último
+- complexidade de tempo no pior caso: O(n)
+- funciona mesmo quando o vetor não está ordenado
+
+Busca binária
+- complexidade de tempo O(logn)

@@ -1,0 +1,33 @@
+n = quantidade de itens num vetor
+v = vetor
+
+Bubble sort (ordenação por trocas)
+- necessárias n-1 varreduras para ordenar os n itens
+- na i-ésima varredura faz n-i comparações (n-i trocas no pior caso)
+- complexidade de tempo no pior caso: O(n²)
+
+Selection sort
+- inicialmente, seleciona o maior item e o posiciona no último índice
+- repete-se o passo anterior supondo que o vetor possui um item a menos
+- a cada passo um item é movido para sua posição definitiva
+- após n-1 passos o vetor estará ordenado
+- chama a função de seleção n-1 vezes
+    - na primeira vez, essa função realiza n-1 comparações para encontrar
+    o maior valor, na segunda n-2... 
+- complexidade de tempo no pior caso: O(n²)
+- para itens grandes (cadeias, registros) é mais rápida que o Bubble sort
+
+Insertion sort
+- assume um prefixo ordenado e um sufixo desordenado
+- inicialmente o prefixo está vazio e o sufixo contém todos os itens
+- a cada passo um item do sufixo é inserido EM ORDEM no prefixo
+- quando o sufixo fica vazio, todos os itens estão ordenados no prefixo
+- chama a função de inserção n vezes
+    - na primeira vez, não faz nenhuma comparação de itens;
+    - na segunda, no máximo uma comparação;
+    - na terceira, no máximo duas...
+- complexidade de tempo no pior caso: O(n²)
+- como mover um item é mais rápido que trocar a posição de dois itens
+ela é mais rápida que o Selection sort
+
+Merge sort (intercalação)
